@@ -1,0 +1,40 @@
+# Bocaditos Criollos - SEO Directives
+# Allow all crawlers by default
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /dashboard
+Disallow: /*.json$
+Disallow: /api/
+Disallow: /vendor/
+Disallow: /node_modules/
+Disallow: /.env
+Disallow: /.git
+
+# Specific crawler rules
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Crawl delay (milliseconds between requests)
+Crawl-delay: 1
+
+# Request rate
+Request-rate: 10/10s
+
+# Sitemap locations
+Sitemap: https://bocaditos-criollos.com/sitemap.xml
+
+# Host preference
+Host: https://bocaditos-criollos.com

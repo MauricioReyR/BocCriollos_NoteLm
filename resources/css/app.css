@@ -1,0 +1,434 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* ==================== */
+/* FUENTES PREMIUM      */
+/* ==================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+/* ==================== */
+/* ESTILOS BASE         */
+/* ==================== */
+
+* {
+  @apply transition-colors duration-300;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-elegant-black text-cream font-sans antialiased;
+  background-color: #0F0F0F;
+}
+
+/* ==================== */
+/* TIPOGRAFÍA          */
+/* ==================== */
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-display font-bold;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  @apply text-5xl md:text-6xl;
+}
+
+h2 {
+  @apply text-4xl md:text-5xl;
+}
+
+h3 {
+  @apply text-3xl md:text-4xl;
+}
+
+h4 {
+  @apply text-2xl md:text-3xl;
+}
+
+h5 {
+  @apply text-xl md:text-2xl;
+}
+
+h6 {
+  @apply text-lg md:text-xl;
+}
+
+p {
+  @apply text-base leading-relaxed;
+}
+
+.text-muted {
+  @apply text-gray-400;
+}
+
+/* ==================== */
+/* BOTONES              */
+/* ==================== */
+
+.btn {
+  @apply inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2;
+}
+
+.btn-primary {
+  @apply bg-burnt-red-500 text-cream hover:bg-burnt-red-600 focus:ring-burnt-red-500;
+  box-shadow: 0 0 20px rgba(184, 52, 29, 0.3);
+}
+
+.btn-primary:hover {
+  @apply shadow-glow-red transform -translate-y-1;
+}
+
+.btn-secondary {
+  @apply bg-warm-orange-500 text-elegant-black hover:bg-warm-orange-600 focus:ring-warm-orange-500;
+  box-shadow: 0 0 20px rgba(230, 126, 34, 0.3);
+}
+
+.btn-secondary:hover {
+  @apply shadow-glow transform -translate-y-1;
+}
+
+.btn-outline {
+  @apply border-2 border-cream text-cream hover:bg-cream hover:text-elegant-black;
+}
+
+.btn-ghost {
+  @apply text-cream hover:bg-white/5 hover:text-warm-orange-500;
+}
+
+.btn-sm {
+  @apply px-4 py-2 text-sm;
+}
+
+.btn-lg {
+  @apply px-8 py-4 text-lg;
+}
+
+/* ==================== */
+/* TARJETAS             */
+/* ==================== */
+
+.card {
+  @apply bg-warm-gray/50 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:border-warm-orange-500/50 transition-all duration-300;
+}
+
+.card-premium {
+  @apply bg-gradient-dark-warm backdrop-blur-xl border border-warm-orange-500/20 rounded-2xl p-8 shadow-premium hover:shadow-premium-lg hover:border-warm-orange-500/50 transition-all duration-300;
+}
+
+.card:hover {
+  @apply transform -translate-y-2;
+}
+
+/* ==================== */
+/* EFECTOS GLASS       */
+/* ==================== */
+
+.glass {
+  @apply bg-white/5 backdrop-blur-md border border-white/10;
+}
+
+.glass-dark {
+  @apply bg-black/20 backdrop-blur-lg border border-white/5;
+}
+
+/* ==================== */
+/* DEGRADADOS           */
+/* ==================== */
+
+.gradient-warm {
+  @apply bg-gradient-to-br-warm;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #B8341D 0%, #E67E22 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ==================== */
+/* INPUTS Y FORMS       */
+/* ==================== */
+
+input, textarea, select {
+  @apply bg-warm-gray/30 border border-white/10 text-cream placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-warm-orange-500 focus:border-transparent transition-all duration-300;
+}
+
+input::placeholder, textarea::placeholder {
+  @apply text-gray-600;
+}
+
+/* ==================== */
+/* ANIMACIONES CUSTOM   */
+/* ==================== */
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  background-size: 1000px 100%;
+}
+
+/* Scroll Reveal Animations */
+@keyframes revealFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes revealFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes revealFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(214, 175, 55, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(214, 175, 55, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(214, 175, 55, 0);
+  }
+}
+
+@keyframes parallaxShift {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(20px);
+  }
+}
+
+@keyframes borderGlow {
+  0% {
+    border-color: transparent;
+    box-shadow: 0 0 0 0 rgba(214, 175, 55, 0);
+  }
+  50% {
+    border-color: rgb(214, 175, 55);
+    box-shadow: 0 0 20px rgba(214, 175, 55, 0.3);
+  }
+  100% {
+    border-color: transparent;
+    box-shadow: 0 0 0 0 rgba(214, 175, 55, 0);
+  }
+}
+
+.animate-revealBottom {
+  animation: revealFromBottom 0.8s ease-out forwards;
+}
+
+.animate-revealLeft {
+  animation: revealFromLeft 0.8s ease-out forwards;
+}
+
+.animate-revealRight {
+  animation: revealFromRight 0.8s ease-out forwards;
+}
+
+.animate-glowPulse {
+  animation: glowPulse 2s infinite;
+}
+
+.animate-parallax {
+  animation: parallaxShift 0.3s ease-out;
+}
+
+.animate-borderGlow {
+  animation: borderGlow 2s infinite;
+}
+
+/* ==================== */
+/* UTILIDADES           */
+/* ==================== */
+
+.container-premium {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.section-padding {
+  @apply py-20 md:py-32;
+}
+
+.backdrop-blur-glass {
+  backdrop-filter: blur(10px) brightness(1.1);
+}
+
+.shadow-brand {
+  box-shadow: 0 0 30px rgba(230, 126, 34, 0.2);
+}
+
+/* Enhanced Transitions */
+button, a, .card, .glass {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced Button Hover */
+.btn {
+  @apply transition-all duration-300;
+}
+
+.btn:hover {
+  @apply transform -translate-y-0.5;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  @apply -translate-y-1;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* Enhanced Card Hover */
+.card:hover {
+  @apply -translate-y-1;
+  box-shadow: 0 15px 40px rgba(214, 175, 55, 0.15);
+}
+
+.card-premium:hover {
+  @apply -translate-y-2;
+  box-shadow: 0 25px 60px rgba(214, 175, 55, 0.2);
+}
+
+/* Link Underline Animation */
+a:not(.btn):not([class*="no-underline"]) {
+  position: relative;
+  text-decoration: none;
+  @apply text-cream;
+}
+
+a:not(.btn):not([class*="no-underline"])::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, #D4AF37, #E67E22);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a:not(.btn):not([class*="no-underline"]):hover::after {
+  width: 100%;
+}
+
+/* ==================== */
+/* RESPONSIVE UTILITIES */
+/* ==================== */
+
+/* Mobile First Spacing */
+.responsive-padding {
+  @apply px-4 py-8 md:px-8 md:py-12 lg:px-12 lg:py-16;
+}
+
+.responsive-gap {
+  @apply gap-4 md:gap-6 lg:gap-8;
+}
+
+/* Section padding responsive */
+.section-responsive {
+  @apply py-12 md:py-16 lg:py-24;
+}
+
+/* Container responsive */
+.container-responsive {
+  @apply max-w-full md:max-w-2xl lg:max-w-7xl mx-auto;
+}
+
+/* Grid responsive optimized */
+.grid-responsive {
+  @apply grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3 lg:gap-8;
+}
+
+/* Card padding responsive */
+.card-responsive {
+  @apply p-4 md:p-6 lg:p-8;
+}
+
+/* Button sizing responsive */
+.btn-responsive {
+  @apply px-4 py-2 md:px-6 md:py-3 lg:px-8 lg:py-4;
+}
+
+/* Font sizing responsive */
+.text-heading-responsive {
+  @apply text-2xl md:text-3xl lg:text-4xl;
+}
+
+.text-subheading-responsive {
+  @apply text-lg md:text-xl lg:text-2xl;
+}
+
+.text-body-responsive {
+  @apply text-sm md:text-base lg:text-lg;
+}
+
+/* Touch target optimization (min 48px) */
+.touch-target {
+  @apply min-h-12 min-w-12;
+}
+
+/* Accessibility - Focus visible */
+.focus-visible {
+  @apply outline-2 outline-offset-2 outline-warm-orange-500;
+}
+
+/* Line height consistency */
+.text-heading {
+  @apply leading-tight tracking-tight;
+}
+
+.text-body {
+  @apply leading-relaxed tracking-normal;
+}
+
+/* ==================== */
+/* SCROLL SMOOTH        */
+/* ==================== */
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
