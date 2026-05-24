@@ -11,16 +11,23 @@
   <div class="relative z-10 container-premium">
     
     {{-- Section Header --}}
-    <div class="max-w-3xl mx-auto text-center mb-16 animate-fade-in" data-animate>
-      <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-burnt-red-500/20 border border-burnt-red-500/50 mb-4">
-        <span class="text-burnt-red-500 font-semibold text-sm">🏷️ CATEGORÍAS</span>
+    <div class="max-w-3xl mx-auto text-center mb-16" data-scroll-reveal="bottom" data-delay="0">
+      <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-burnt-red-500/20 border border-burnt-red-500/50 mb-6">
+        <span class="text-burnt-red-400 font-bold text-sm uppercase tracking-widest">🏷️ Categorías</span>
       </span>
       
-      <h2 class="text-4xl sm:text-5xl md:text-6xl font-display font-bold text-cream mb-4">
-        Explorar por Tamaños
-      </h2>
+      <div class="relative mb-6">
+        <h2 class="text-5xl sm:text-6xl md:text-7xl font-display font-black text-cream leading-tight">
+          Explora por <span class="gradient-text">Categorías</span>
+        </h2>
+        <div class="mt-4 flex items-center justify-center gap-3">
+          <span class="block w-12 h-0.5 bg-gradient-to-r from-transparent to-burnt-red-500/60"></span>
+          <span class="block w-2 h-2 rotate-45 bg-burnt-red-500"></span>
+          <span class="block w-12 h-0.5 bg-gradient-to-r from-burnt-red-500/60 to-transparent"></span>
+        </div>
+      </div>
       
-      <p class="text-lg text-gray-400">
+      <p class="text-lg md:text-xl text-gray-400 leading-relaxed max-w-2xl mx-auto">
         Encuentra exactamente lo que buscas en nuestras principales categorías de comida rápida tradicional
       </p>
     </div>
@@ -30,61 +37,82 @@
       
       @forelse($categories ?? [] as $category)
         <x-category-card
+          data-scroll-reveal="bottom"
+          data-delay="{{ ($loop->index ?? 0) * 150 }}"
           name="{{ $category->name }}"
           count="{{ $category->products_count }}"
           icon="{{ $category->icon ?? '🍔' }}"
           gradient="{{ $category->gradient }}"
+          slug="{{ $category->slug }}"
         />
       @empty
         {{-- Hardcoded fallback --}}
         <x-category-card
-          name="Empanadas Tradicionales y Bocado "
-          count="3"
+          data-scroll-reveal="bottom"
+          data-delay="0"
+          name="Empanadas"
+          count="2"
           icon="🥟"
           gradient="from-burnt-red-600 to-burnt-red-800"
+          slug="empanadas"
         />
         <x-category-card
-          name="Pasteles de Yuca tipo Bocado"
+          data-scroll-reveal="bottom"
+          data-delay="150"
+          name="Pasteles de Yuca"
           count="2"
           icon="🥐"
           gradient="from-warm-orange-600 to-warm-orange-800"
+          slug="pasteles"
         />
         <x-category-card
+          data-scroll-reveal="bottom"
+          data-delay="300"
           name="Hamburguesas"
-          count="4"
+          count="3"
           icon="🍔"
           gradient="from-burnt-red-700 to-burnt-red-900"
+          slug="hamburguesas"
         />
         <x-category-card
-          name="Arepas Trifasicas Tradicionales y Tipo Bocado"
+          data-scroll-reveal="bottom"
+          data-delay="450"
+          name="Arepas Trifásicas"
           count="2"
           icon="🍘"
           gradient="from-warm-orange-700 to-orange-900"
+          slug="arepas"
         />
         <x-category-card
+          data-scroll-reveal="bottom"
+          data-delay="600"
           name="Aborrajados"
-          count="3"
+          count="2"
           icon="🫔"
           gradient="from-burnt-red-500 to-orange-700"
+          slug="aborrajados"
         />
         <x-category-card
-          name="Bebidas Masato y Avena Caleña"
+          data-scroll-reveal="bottom"
+          data-delay="750"
+          name="Bebidas"
           count="2"
           icon="🥤"
           gradient="from-warm-orange-600 to-burnt-red-700"
+          slug="bebidas"
         />
       @endforelse
 
     </div>
 
     {{-- Info Section --}}
-    <div class="mt-16 p-8 md:p-12 rounded-2xl bg-elegant-black/50 border border-white/10 backdrop-blur-md text-center animate-fade-in" data-animate style="animation-delay: 0.2s;">
+    <div class="mt-16 p-8 md:p-12 rounded-2xl bg-elegant-black/50 border border-white/10 backdrop-blur-md text-center" data-scroll-reveal="bottom" data-delay="300">
       <p class="text-lg text-gray-300 mb-6">
         ¿No encuentras una categoría específica?
       </p>
       
       <a 
-        href="https://wa.me/573001234567?text=Hola%20Bocaditos%20Criollos%2C%20me%20gustar%C3%ADa%20conocer%20todas%20sus%20categor%C3%ADas"
+        href="{{ whatsapp_url('Hola%20Bocaditos%20Criollos%2C%20me%20gustar%C3%ADa%20conocer%20todas%20sus%20categor%C3%ADas') }}"
         target="_blank"
         rel="noopener noreferrer"
         class="inline-flex items-center gap-2 btn btn-primary"

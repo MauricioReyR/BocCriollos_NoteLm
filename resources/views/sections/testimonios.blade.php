@@ -11,16 +11,23 @@
   <div class="relative z-10 container-premium">
     
     {{-- Section Header --}}
-    <div class="max-w-3xl mx-auto text-center mb-16 animate-fade-in" data-animate>
-      <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-warm-orange-500/20 border border-warm-orange-500/50 mb-4">
-        <span class="text-warm-orange-500 font-semibold text-sm">💬 LO QUE DICEN</span>
+    <div class="max-w-3xl mx-auto text-center mb-16" data-scroll-reveal="bottom" data-delay="0">
+      <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-warm-orange-500/20 border border-warm-orange-500/50 mb-6">
+        <span class="text-warm-orange-400 font-bold text-sm uppercase tracking-widest">💬 Lo Que Dicen</span>
       </span>
       
-      <h2 class="text-4xl sm:text-5xl md:text-6xl font-display font-bold text-cream mb-4">
-        Testimonios de Clientes
-      </h2>
+      <div class="relative mb-6">
+        <h2 class="text-5xl sm:text-6xl md:text-7xl font-display font-black text-cream leading-tight">
+          <span class="gradient-text">Testimonios</span> de Clientes
+        </h2>
+        <div class="mt-4 flex items-center justify-center gap-3">
+          <span class="block w-12 h-0.5 bg-gradient-to-r from-transparent to-warm-orange-500/60"></span>
+          <span class="block w-2 h-2 rotate-45 bg-warm-orange-500"></span>
+          <span class="block w-12 h-0.5 bg-gradient-to-r from-warm-orange-500/60 to-transparent"></span>
+        </div>
+      </div>
       
-      <p class="text-lg text-gray-400">
+      <p class="text-lg md:text-xl text-gray-400 leading-relaxed max-w-2xl mx-auto">
         Lee las historias de nuestros clientes satisfechos que disfrutan nuestros productos todos los días
       </p>
     </div>
@@ -30,6 +37,8 @@
       
       {{-- Testimonial 1 --}}
       <x-testimonial-card
+        data-scroll-reveal="bottom"
+        data-delay="0"
         name="María González"
         role="Estudiante"
         rating="5"
@@ -40,6 +49,8 @@
 
       {{-- Testimonial 2 --}}
       <x-testimonial-card
+        data-scroll-reveal="bottom"
+        data-delay="150"
         name="Carlos Rodríguez"
         role="Trabajador Independiente"
         rating="5"
@@ -50,6 +61,8 @@
 
       {{-- Testimonial 3 --}}
       <x-testimonial-card
+        data-scroll-reveal="bottom"
+        data-delay="300"
         name="Ana Martínez"
         role="Mamá Emprendedora"
         rating="5"
@@ -60,6 +73,8 @@
 
       {{-- Testimonial 4 --}}
       <x-testimonial-card
+        data-scroll-reveal="bottom"
+        data-delay="450"
         name="Juan Pérez"
         role="Oficinista"
         rating="4"
@@ -70,6 +85,8 @@
 
       {{-- Testimonial 5 --}}
       <x-testimonial-card
+        data-scroll-reveal="bottom"
+        data-delay="600"
         name="Sofia Acosta"
         role="Deportista"
         rating="5"
@@ -80,6 +97,8 @@
 
       {{-- Testimonial 6 --}}
       <x-testimonial-card
+        data-scroll-reveal="bottom"
+        data-delay="750"
         name="Diego López"
         role="Chef Pasante"
         rating="5"
@@ -91,13 +110,13 @@
     </div>
 
     {{-- CTA Section --}}
-    <div class="mt-16 text-center animate-fade-in" data-animate style="animation-delay: 0.2s;">
+    <div class="mt-16 text-center" data-scroll-reveal="bottom" data-delay="300">
       <p class="text-gray-400 mb-6 text-lg">
         ¿Quieres probar Bocaditos Criollos?
       </p>
       
       <a 
-        href="https://wa.me/573001234567?text=Hola%20Bocaditos%20Criollos%2C%20quiero%20hacer%20mi%20primer%20pedido"
+        href="{{ whatsapp_url('Hola%20Bocaditos%20Criollos%2C%20quiero%20hacer%20mi%20primer%20pedido') }}"
         target="_blank"
         rel="noopener noreferrer"
         class="inline-flex items-center gap-2 btn btn-primary text-lg"

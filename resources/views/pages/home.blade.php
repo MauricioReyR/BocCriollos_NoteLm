@@ -3,13 +3,13 @@
   @include('sections.hero')
 
   {{-- Nuestros Combos Section --}}
-  @include('sections.combos')
+  @include('sections.combos', ['combos' => $combos])
 
-  {{-- Productos Destacados Section --}}
-  @include('sections.productos', ['products' => $featuredProducts])
-
-  {{-- Categorías Section --}}
-  @include('sections.categorias', ['categories' => $categories])
+  {{-- Productos + Categorías con filtro compartido --}}
+  <div x-data="{ selectedCategory: null }">
+    @include('sections.productos', ['products' => $featuredProducts])
+    @include('sections.categorias', ['categories' => $categories])
+  </div>
 
   {{-- Testimonios Section --}}
   @include('sections.testimonios')

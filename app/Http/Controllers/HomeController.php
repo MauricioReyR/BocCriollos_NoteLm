@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $featuredProducts = Product::with('category')
+        $featuredProducts = Product::with(['category', 'sizes'])
             ->featured()
             ->active()
             ->sorted()
@@ -20,6 +20,14 @@ class HomeController extends Controller
             ->withCount('products')
             ->get();
 
-        return view('pages.home', compact('featuredProducts', 'categories'));
+        $combos = Product::whereHas('category', function ($q) {
+                $q->where('slug', 'combos');
+            })
+            ->active()
+            ->sorted()
+            ->with(['category', 'sizes'])
+            ->get();
+
+        return view('pages.home', compact('featuredProducts', 'categories', 'combos'));
     }
 }

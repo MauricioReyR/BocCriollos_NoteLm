@@ -6,7 +6,11 @@
   {{-- Card Container --}}
   <div 
     class="relative h-32 sm:h-40 md:h-48 rounded-2xl overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-premium-lg"
-    @click="smoothScroll('productos')"
+    @click="
+      selectedCategory = selectedCategory === '{{ $slug ?? '' }}' ? null : '{{ $slug ?? '' }}';
+      window.smoothScroll('productos');
+    "
+    :class="selectedCategory === '{{ $slug ?? '' }}' ? 'ring-2 ring-warm-orange-500 ring-offset-2 ring-offset-elegant-black' : ''"
   >
     {{-- Background Gradient --}}
     <div class="absolute inset-0 bg-gradient-to-br {{ $gradient ?? 'from-burnt-red-500 to-warm-orange-600' }}">

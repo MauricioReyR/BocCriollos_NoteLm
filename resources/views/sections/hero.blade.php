@@ -5,8 +5,8 @@
 >
   {{-- Background Decorative Elements --}}
   <div class="absolute inset-0 opacity-20">
-    <div class="absolute top-0 left-1/4 w-96 h-96 bg-warm-orange-500 rounded-full blur-3xl animate-float"></div>
-    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-burnt-red-500 rounded-full blur-3xl animate-float" style="animation-delay: 2s;"></div>
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-warm-orange-500 rounded-full blur-3xl animate-float" data-parallax="0.3"></div>
+    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-burnt-red-500 rounded-full blur-3xl animate-float" style="animation-delay: 2s;" data-parallax="0.15"></div>
   </div>
 
   {{-- Dark Overlay for Text Readability --}}
@@ -48,7 +48,7 @@
     >
       {{-- Primary CTA --}}
       <a 
-        href="https://wa.me/573001234567?text=Hola%20Bocaditos%20Criollos%2C%20me%20gustaría%20hacer%20un%20pedido"
+        href="{{ whatsapp_url('Hola%20Bocaditos%20Criollos%2C%20me%20gustaría%20hacer%20un%20pedido') }}"
         target="_blank"
         rel="noopener noreferrer"
         class="btn btn-primary lg:px-8 lg:py-4 lg:text-lg group"

@@ -127,7 +127,8 @@ document.addEventListener('DOMContentLoaded', function() {
           
           setTimeout(() => {
             try {
-              entry.target.classList.add(`animate-reveal${direction.charAt(0).toUpperCase() + direction.slice(1)}`);
+              entry.target.classList.add(`animate-reveal-${direction}`);
+              entry.target.style.removeProperty('opacity');
             } catch (error) {
               console.error('[Scroll Reveal Animation Error]:', error);
             }
@@ -183,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   function updateActiveNavLink() {
     try {
-      const sections = ['hero', 'productos', 'categorias', 'testimonios', 'cta-whatsapp'];
+      const sections = ['hero', 'combos', 'productos', 'categorias', 'testimonios', 'cta-whatsapp'];
       const scrollPosition = window.scrollY + 150;
       
       sections.forEach(sectionId => {
