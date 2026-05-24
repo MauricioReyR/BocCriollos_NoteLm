@@ -22,6 +22,13 @@
 3. Evita texto demasiado pequeño (no se leerá en previsualizaciones)
 4. Colores: usa los tonos del branding (burnt-red, warm-orange, cream)
 
+## 📧 Contacto
+
+Ante cualquier duda sobre las imágenes, contáctanos:
+
+- **Email:** [nuestrosbocaditoscriollos@gmail.com](mailto:nuestrosbocaditoscriollos@gmail.com)
+- **WhatsApp:** [wa.me/573138513658](https://wa.me/573138513658)
+
 ## 🔄 ¿Cómo reemplazar la imagen?
 
 1. Prepara tu foto en **1200×630px**

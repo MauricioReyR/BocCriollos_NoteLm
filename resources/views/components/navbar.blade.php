@@ -41,11 +41,36 @@
         </a>
       </div>
 
-      {{-- CTA Button (Desktop) --}}
+      {{-- CTA Button (Desktop) with Tooltip --}}
       <div class="hidden md:flex items-center gap-4">
-        <button class="btn btn-primary">
-          <span>📱 Ordenar</span>
-        </button>
+        <div class="relative group/tooltip">
+          <a 
+            href="{{ whatsapp_url('Hola%20Bocaditos%20Criollos%2C%20me%20gustar%C3%ADa%20hacer%20un%20pedido') }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-describedby="whatsapp-tooltip"
+            class="btn btn-primary"
+          >
+            <span>📱 Ordenar</span>
+          </a>
+          {{-- Tooltip --}}
+          <div 
+            id="whatsapp-tooltip"
+            class="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 pointer-events-none opacity-0 group-hover/tooltip:opacity-100 transition-all duration-300 translate-y-1 group-hover/tooltip:translate-y-0"
+            role="tooltip"
+          >
+            <div class="relative bg-elegant-black/95 backdrop-blur-xl border border-white/10 rounded-lg px-3 py-1.5 shadow-xl whitespace-nowrap">
+              <div class="flex items-center gap-1.5 text-xs text-cream">
+                <svg class="w-3.5 h-3.5 text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.272-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-5.031 1.378c-3.055 2.291-3.89 6.887-1.9 10.427 1.832 3.325 5.635 5.187 9.315 4.874.614-.057 1.221-.174 1.814-.356l.04-.013c3.34-.935 5.82-3.839 6.487-7.324.466-2.459.216-5.532-1.308-7.701-1.608-2.27-4.045-3.5-6.5-3.5l-.077.001c-1.564.038-3.091.3-4.54.923zm0 0"/>
+                </svg>
+                <span>Pedido por <span class="text-green-400 font-semibold">WhatsApp</span></span>
+              </div>
+              {{-- Arrow --}}
+              <div class="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-4 border-transparent border-t-elegant-black/95"></div>
+            </div>
+          </div>
+        </div>
       </div>
 
       {{-- Mobile Menu Toggle (Hamburguesa animada a X) --}}

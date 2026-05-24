@@ -50,7 +50,7 @@ return [
     ],
 
     // Redes sociales
-    'email' => 'info@bocaditos.co',
+    'email' => 'nuestrosbocaditoscriollos@gmail.com',
     'social' => [
         'whatsapp' => 'https://wa.me/573138513658',
         'instagram' => 'https://www.instagram.com/bocaditoscriollos/',
