@@ -10,7 +10,7 @@
       {{-- Brand Section --}}
       <div class="col-span-1">
         <div class="flex items-center gap-3 mb-4">
-          <div class="text-3xl">🍔</div>
+          <img src="{{ asset('images/logo_60x60.png') }}" alt="Bocaditos Criollos" class="w-[30px] h-[30px] object-contain" style="width:30px;height:30px" width="30" height="30">
           <div>
             <h3 class="font-display font-bold text-cream text-lg">Bocaditos Criollos</h3>
             <p class="text-xs text-gray-500">Auténtica Comida Colombiana</p>

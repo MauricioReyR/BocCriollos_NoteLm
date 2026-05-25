@@ -6,7 +6,7 @@
 |---|---|---|
 | `og-image.jpg` | **1200×630px** | Open Graph — aparece al compartir en Facebook, WhatsApp, LinkedIn, Twitter |
 | `favicon-96x96.png` | ✅ Ya existe | Favicon del sitio |
-| `logo.png` (opcional) | 512×512px | Logo para futuros usos |
+| `logo_60x60.png` | ✅ Ya existe | Logo de la marca en navbar y footer |
 
 ## 📐 Especificaciones de `og-image.jpg`
 
@@ -41,7 +41,8 @@ Ante cualquier duda sobre las imágenes, contáctanos:
 
 ```
 public/images/
-├── README.md          ← Este archivo
-├── favicon-96x96.png  ← Favicon (ya existe)
-└── og-image.jpg       ← OG Image (tú la colocas aquí)
+├── README.md           ← Este archivo
+├── logo_60x60.png      ← Logo de la marca
+├── favicon-96x96.png   ← Favicon (ya existe)
+└── og-image.jpg        ← OG Image (tú la colocas aquí)
 ```

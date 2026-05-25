@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\ProductSize;
+use App\Models\Testimonial;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -81,7 +82,110 @@ class DatabaseSeeder extends Seeder
         }
 
         // ==========================================
-        // 3. CREAR TAMAÑOS PARA EMPANADAS Y PASTELES
+        // 3. CREAR TESTIMONIOS
+        // ==========================================
+        $testimonials = [
+            [
+                'name' => 'María González',
+                'role' => 'Estudiante',
+                'rating' => 5,
+                'avatar_emoji' => '😊',
+                'text' => 'Las empanadas de Bocaditos Criollos son increíbles. Crujientes por fuera, jugosas por dentro. He probado en muchos lugares pero estos se llevan el premio. ¡Altamente recomendado!',
+                'is_approved' => true,
+                'sort_order' => 1,
+            ],
+            [
+                'name' => 'Carlos Rodríguez',
+                'role' => 'Trabajador Independiente',
+                'rating' => 5,
+                'avatar_emoji' => '👨‍💼',
+                'text' => 'Perfecto para mi almuerzo rápido. La comida llega en menos de 15 minutos y siempre está caliente. El servicio por WhatsApp es muy práctico. Vuelvo cada semana.',
+                'is_approved' => true,
+                'sort_order' => 2,
+            ],
+            [
+                'name' => 'Ana Martínez',
+                'role' => 'Mamá Emprendedora',
+                'rating' => 5,
+                'avatar_emoji' => '👩',
+                'text' => 'Mis hijos aman las salchipapas. Es comida rápida pero hecha con calidad. Ingredientes frescos y porciones generosas. Definitivamente es nuestro lugar favorito en Engativá.',
+                'is_approved' => true,
+                'sort_order' => 3,
+            ],
+            [
+                'name' => 'Juan Pérez',
+                'role' => 'Oficinista',
+                'rating' => 4,
+                'avatar_emoji' => '👨',
+                'text' => 'Las hamburguesas son de lujo. Pan tostado perfecto, carne jugosa y ingredientes premium. El combo familiar es perfecto para compartir con compañeros. Muy buen precio.',
+                'is_approved' => true,
+                'sort_order' => 4,
+            ],
+            [
+                'name' => 'Sofia Acosta',
+                'role' => 'Deportista',
+                'rating' => 5,
+                'avatar_emoji' => '🏃‍♀️',
+                'text' => 'Como deportista busco comida nutritiva y deliciosa. Bocaditos Criollos ofrece ambas cosas. Sus arepas de queso son mi favorita después del entrenamiento. Gracias por la calidad.',
+                'is_approved' => true,
+                'sort_order' => 5,
+            ],
+            [
+                'name' => 'Diego López',
+                'role' => 'Chef Pasante',
+                'rating' => 5,
+                'avatar_emoji' => '👨‍🍳',
+                'text' => 'Como alguien en la industria culinaria, respeto mucho lo que hacen aquí. Recetas auténticas, técnica impecable, presentación elegante. Es comida rápida pero con alma. Chapeau.',
+                'is_approved' => true,
+                'sort_order' => 6,
+            ],
+            [
+                'name' => 'Laura Mendoza',
+                'role' => 'Ingeniera de Sistemas',
+                'rating' => 5,
+                'avatar_emoji' => '👩‍💻',
+                'text' => 'Descubrí Bocaditos Criollos por un compañero de trabajo y ahora soy cliente fiel. Las arepas trifásicas son espectaculares y el servicio es increíblemente rápido. Lo recomiendo totalmente.',
+                'is_approved' => true,
+                'sort_order' => 7,
+            ],
+            [
+                'name' => 'Andrés Rivera',
+                'role' => 'Taxista',
+                'rating' => 4,
+                'avatar_emoji' => '🚖',
+                'text' => 'En mi trabajo necesito comer rápido y rico. Los combos de Bocaditos Criollos son perfectos: buen precio, buena cantidad y siempre fresco. Los pasteles de yuca son mis favoritos.',
+                'is_approved' => true,
+                'sort_order' => 8,
+            ],
+            [
+                'name' => 'Carmen Vega',
+                'role' => 'Profesora',
+                'rating' => 5,
+                'avatar_emoji' => '👩‍🏫',
+                'text' => 'Pido para mis hijos después del colegio y les encanta. Comida casera con sabor auténtico. El masato de arroz es delicioso, como el de mi abuela. Calidad y tradición en cada bocado.',
+                'is_approved' => true,
+                'sort_order' => 9,
+            ],
+            [
+                'name' => 'Felipe Torres',
+                'role' => 'Diseñador Gráfico',
+                'rating' => 5,
+                'avatar_emoji' => '🎨',
+                'text' => 'Trabajo desde casa y pido aquí al menos dos veces por semana. La atención es excelente, la comida siempre llega caliente y el sabor es consistente. Los aborrajados mixtos son una locura.',
+                'is_approved' => true,
+                'sort_order' => 10,
+            ],
+        ];
+
+        foreach ($testimonials as $data) {
+            Testimonial::updateOrCreate(
+                ['name' => $data['name'], 'text' => $data['text']],
+                $data
+            );
+        }
+
+        // ==========================================
+        // 4. CREAR TAMAÑOS PARA EMPANADAS Y PASTELES
         // ==========================================
         $sizes = [
             // Empanadas

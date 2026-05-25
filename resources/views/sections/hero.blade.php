@@ -5,8 +5,8 @@
 >
   {{-- Background Decorative Elements --}}
   <div class="absolute inset-0 opacity-20">
-    <div class="absolute top-0 left-1/4 w-96 h-96 bg-warm-orange-500 rounded-full blur-3xl animate-float" data-parallax="0.3"></div>
-    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-burnt-red-500 rounded-full blur-3xl animate-float" style="animation-delay: 2s;" data-parallax="0.15"></div>
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-warm-orange-500 rounded-full blur-3xl animate-float"></div>
+    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-burnt-red-500 rounded-full blur-3xl animate-float" style="animation-delay: 2s;"></div>
   </div>
 
   {{-- Dark Overlay for Text Readability --}}
@@ -20,7 +20,7 @@
       class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-warm-orange-500/20 border border-warm-orange-500/50 mb-8 animate-fade-in"
       style="animation-delay: 0.2s;"
     >
-      <span class="text-warm-orange-500 font-semibold text-sm">⭐ Desde 2000</span>
+      <span class="text-warm-orange-500 font-semibold text-sm">⭐ Desde el año 1990</span>
     </div>
 
     {{-- Main Heading --}}
@@ -48,7 +48,7 @@
     >
       {{-- Primary CTA --}}
       <a 
-        href="{{ whatsapp_url('Hola%20Bocaditos%20Criollos%2C%20me%20gustaría%20hacer%20un%20pedido') }}"
+        href="https://wa.me/573001234567?text=Hola%20Bocaditos%20Criollos%2C%20me%20gustaría%20hacer%20un%20pedido"
         target="_blank"
         rel="noopener noreferrer"
         class="btn btn-primary lg:px-8 lg:py-4 lg:text-lg group"

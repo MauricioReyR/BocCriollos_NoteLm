@@ -13,7 +13,7 @@
       {{-- Logo / Branding --}}
       <div class="flex items-center gap-3 group cursor-pointer">
         <div class="relative">
-          <div class="text-3xl">🍔</div>
+          <img src="{{ asset('images/logo_60x60.png') }}" alt="Bocaditos Criollos" class="w-[30px] h-[30px] object-contain rounded-full" style="width:30px;height:30px" width="30" height="30">
           <div class="absolute inset-0 bg-warm-orange-500 rounded-full blur opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
         </div>
         <div class="hidden sm:flex flex-col">

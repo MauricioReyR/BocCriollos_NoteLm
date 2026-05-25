@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Testimonial;
 
 class HomeController extends Controller
 {
@@ -28,6 +29,8 @@ class HomeController extends Controller
             ->with(['category', 'sizes'])
             ->get();
 
-        return view('pages.home', compact('featuredProducts', 'categories', 'combos'));
+        $testimonials = Testimonial::approved()->sorted()->get();
+
+        return view('pages.home', compact('featuredProducts', 'categories', 'combos', 'testimonials'));
     }
 }

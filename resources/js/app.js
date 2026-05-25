@@ -1,10 +1,80 @@
 import './bootstrap';
 import Alpine from 'alpinejs';
 
+// ====================
+// TESTIMONIAL FORM (defined BEFORE Alpine.start())
+// ====================
+
+window.testimonialForm = function () {
+  return {
+    open: false,
+    form: { name: '', role: '', rating: 5, text: '', website: '' },
+    hoverRating: 0,
+    errors: {},
+    submitted: false,
+    submitting: false,
+
+    validate() {
+      this.errors = {};
+      if (!this.form.name.trim()) this.errors.name = 'El nombre es obligatorio';
+      if (!this.form.text.trim()) this.errors.text = 'El testimonio es obligatorio';
+      if (this.form.text.trim().length < 10) this.errors.text = 'El testimonio debe tener al menos 10 caracteres';
+      if (this.form.rating < 1 || this.form.rating > 5) this.errors.rating = 'Selecciona una calificación';
+      return Object.keys(this.errors).length === 0;
+    },
+
+    submitForm() {
+      if (!this.validate()) return;
+      this.submitting = true;
+      this.errors = {};
+
+      fetch('/testimonios', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')?.content || '',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(this.form),
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          this.submitting = false;
+          this.submitted = true;
+          this.form = { name: '', role: '', rating: 5, text: '', website: '' };
+        } else {
+          this.submitting = false;
+          if (data.errors) {
+            const fieldMap = { name: 'name', role: 'role', rating: 'rating', text: 'text' };
+            Object.keys(data.errors).forEach(field => {
+              const mapped = fieldMap[field] || field;
+              this.errors[mapped] = data.errors[field][0];
+            });
+          } else {
+            this.errors._general = data.message || 'Error al enviar el testimonio';
+          }
+        }
+      })
+      .catch(() => {
+        this.submitting = false;
+        this.errors._general = 'Error de conexión. Intenta de nuevo.';
+      });
+    },
+
+    resetForm() {
+      this.open = false;
+      this.submitted = false;
+      this.errors = {};
+      this.form = { name: '', role: '', rating: 5, text: '', website: '' };
+    },
+  };
+};
+
 // Alpine.js está disponible globalmente
 window.Alpine = Alpine;
 
-// Inicializar Alpine
+// Inicializar Alpine (después de definir los componentes)
 Alpine.start();
 
 // ==================== 

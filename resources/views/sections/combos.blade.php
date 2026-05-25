@@ -13,7 +13,7 @@
     {{-- Section Header --}}
     <div class="max-w-3xl mx-auto text-center mb-16" data-scroll-reveal="bottom" data-delay="0">
       <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-warm-orange-500/20 border border-warm-orange-500/50 mb-6">
-        <span class="text-warm-orange-400 font-bold text-sm uppercase tracking-widest">⚡ Eventos Familiares</span>
+        <span class="text-warm-orange-400 font-bold text-sm uppercase tracking-widest">⚡ Eventos Familiares y Empresariales</span>
       </span>
       
       <div class="relative mb-6">
@@ -97,7 +97,7 @@
           description="20 deliciosos y calientitos mini  pastelitos de yuca 😋 acompañados de ají criollo y salsa casera tipo chimichurri."
           price="35000"
           category="Combos"
-          icon="🥕"
+          icon="🫔"
           imageGradient="from-burnt-red-500 to-burnt-red-700"
         />
         <x-product-card
@@ -107,17 +107,37 @@
           description="5 Empanadas Tradicionales, 2 Empanadas Gourmet y 2 Arepas de huevo Trifasicas. El combo perfecto para los amantes de la variedad y el sabor auténtico colombiano. Se entregan calientes y Crujientes, acompalñadas de nuestro aji casero  y nuestra salsa casera tipo chimichurri. ¡Pide tu domicilio ahora y disfruta de esta delicia en casa!  😎"
           price="35000"
           category="Combos"
-          icon="🎉"
+          icon="🥟 + 🫓"
           imageGradient="from-warm-orange-600 to-warm-orange-900"
         />
         <x-product-card
           data-scroll-reveal="bottom"
           data-delay="750"
-          name="Combo Megabocado"
-          description="5 Empanadas Tradicionales, 2 Empanadas Gourmet y 2 Arepas de huevo Trifasicas. El combo perfecto para los amantes de la variedad y el sabor auténtico colombiano. Se entregan calientes y Crujientes, acompalñadas de nuestro aji casero  y nuestra salsa casera tipo chimichurri. ¡Pide tu domicilio ahora y disfruta de esta delicia en casa!  😎"
+          name="Combo valluno"
+          description="⚠️⚠️COMBO VALLUNO⚠️⚠️ Disfruta de 4 crujientes empanadas rellenas de papa 🥔 y carne desmechada🥩, 4 marranitas 🐷(patacon relleno chicharron) y 2 avenas caleñas🧊 en empaque pet sellado de 250ml. Te las llevamos a 🏡 con aji criollo 🥵 y salsa casera tipo chimichurri 😏. Que esperas? Haz tu pedido ahora por WhatsApp"
           price="35000"
           category="Combos"
-          icon="🎉"
+          icon="🥟"
+          imageGradient="from-warm-orange-600 to-warm-orange-900"
+        />
+        <x-product-card
+          data-scroll-reveal="bottom"
+          data-delay="750"
+          name="Combo Arepa Trifasica"
+          description="8 crujientes arepas huevo trifasicas con pollo desmechado y carne molida. Acompañadas de nuestra deliciosa salsa casera y aji criollo"
+          price="35000"
+          category="Combos"
+          icon="🍘"
+          imageGradient="from-warm-orange-600 to-warm-orange-900"
+        />
+        <x-product-card
+          data-scroll-reveal="bottom"
+          data-delay="750"
+          name="Combo Aborrajado Valluno"
+          description="7 unidades por 20mil. Disfruta esta delicia del valle: platanito maduro, relleno de queso doble crema aborrajado. El sabor del valle en un Bocado!"
+          price="27000"
+          category="Combos"
+          icon="🍌+ 🥓"
           imageGradient="from-warm-orange-600 to-warm-orange-900"
         />
       @endforelse
@@ -127,7 +147,7 @@
     {{-- CTA Section --}}
     <div class="mt-16 text-center" data-scroll-reveal="bottom" data-delay="300">
       <p class="text-gray-400 mb-6">
-        ¿Quieres un combo personalizado?
+        ¿Quieres un combo ahora?                        
       </p>
       
       <a 
@@ -136,7 +156,7 @@
         rel="noopener noreferrer"
         class="inline-flex items-center gap-2 btn btn-secondary"
       >
-        <span>Armar mi Combo</span>
+        <span>Pide tu Combo</span>
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
         </svg>

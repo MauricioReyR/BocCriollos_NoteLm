@@ -11,6 +11,7 @@
     <meta name="author" content="Bocaditos Criollos">
     <meta name="robots" content="index, follow">
     <meta name="format-detection" content="telephone=yes">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     
     {{-- Open Graph / Facebook / LinkedIn / WhatsApp --}}
     <meta property="og:type" content="website">
