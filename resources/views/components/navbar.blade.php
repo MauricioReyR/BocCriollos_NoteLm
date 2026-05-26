@@ -30,12 +30,6 @@
         <a href="#combos" data-nav-link="combos" class="text-cream hover:text-warm-orange-500 transition-colors duration-300 text-sm font-medium">
           Combos
         </a>
-        <a href="#productos" data-nav-link="productos" class="text-cream hover:text-warm-orange-500 transition-colors duration-300 text-sm font-medium">
-          Productos
-        </a>
-        <a href="#categorias" data-nav-link="categorias" class="text-cream hover:text-warm-orange-500 transition-colors duration-300 text-sm font-medium">
-          Categorías
-        </a>
         <a href="#testimonios" data-nav-link="testimonios" class="text-cream hover:text-warm-orange-500 transition-colors duration-300 text-sm font-medium">
           Testimonios
         </a>
@@ -129,24 +123,6 @@
         <span class="inline-flex items-center gap-3">
           <span class="text-lg">🍱</span>
           Combos
-        </span>
-      </a>
-      <a href="#productos"
-         data-nav-link="productos"
-         @click.prevent="window.smoothScroll('productos'); mobileMenuOpen = false"
-         class="block px-4 py-3 rounded-xl text-cream hover:text-warm-orange-500 hover:bg-white/5 transition-all duration-300 text-base font-medium">
-        <span class="inline-flex items-center gap-3">
-          <span class="text-lg">🍔</span>
-          Productos
-        </span>
-      </a>
-      <a href="#categorias"
-         data-nav-link="categorias"
-         @click.prevent="window.smoothScroll('categorias'); mobileMenuOpen = false"
-         class="block px-4 py-3 rounded-xl text-cream hover:text-warm-orange-500 hover:bg-white/5 transition-all duration-300 text-base font-medium">
-        <span class="inline-flex items-center gap-3">
-          <span class="text-lg">📂</span>
-          Categorías
         </span>
       </a>
       <a href="#testimonios"

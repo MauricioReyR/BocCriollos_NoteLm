@@ -105,7 +105,7 @@
 
             <div class="body">
                 <p style="margin-top: 0; font-size: 16px; color: #64748b;">
-                    Un cliente ha compartido su experiencia en Bocaditos Criollos. 
+                    Un cliente ha compartido su experiencia con los combos de Bocaditos Criollos. 
                     Revisa el testimonio y apruebalo para que se publique en el sitio web.
                 </p>
 

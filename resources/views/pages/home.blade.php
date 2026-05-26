@@ -5,12 +5,6 @@
   {{-- Nuestros Combos Section --}}
   @include('sections.combos', ['combos' => $combos])
 
-  {{-- Productos + Categorías con filtro compartido --}}
-  <div x-data="{ selectedCategory: null }">
-    @include('sections.productos', ['products' => $featuredProducts])
-    @include('sections.categorias', ['categories' => $categories])
-  </div>
-
   {{-- Testimonios Section --}}
   @include('sections.testimonios')
 

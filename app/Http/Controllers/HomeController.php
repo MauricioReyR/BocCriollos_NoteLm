@@ -2,35 +2,38 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
-use App\Models\Product;
+use App\Models\Combo;
 use App\Models\Testimonial;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $featuredProducts = Product::with(['category', 'sizes'])
+        $featuredCombos = Combo::active()
             ->featured()
-            ->active()
             ->sorted()
             ->get();
 
-        $categories = Category::active()
+        $combos = Combo::active()
             ->sorted()
-            ->withCount('products')
-            ->get();
-
-        $combos = Product::whereHas('category', function ($q) {
-                $q->where('slug', 'combos');
-            })
-            ->active()
-            ->sorted()
-            ->with(['category', 'sizes'])
+            ->where('is_featured', false)
             ->get();
 
         $testimonials = Testimonial::approved()->sorted()->get();
 
-        return view('pages.home', compact('featuredProducts', 'categories', 'combos', 'testimonials'));
+        $combosTradicional = $combos->where('size', 'tradicional');
+        $combosBocado = $combos->where('size', 'bocado');
+        $combosSinSize = $combos->whereNull('size');
+
+        return view('pages.home', compact(
+            'featuredCombos',
+            'combos',
+            'combosTradicional',
+            'combosBocado',
+            'combosSinSize',
+            'testimonials'
+        ));
     }
+
+
 }

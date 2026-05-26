@@ -20,7 +20,7 @@
       class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-warm-orange-500/20 border border-warm-orange-500/50 mb-8 animate-fade-in"
       style="animation-delay: 0.2s;"
     >
-      <span class="text-warm-orange-500 font-semibold text-sm">⭐ Desde el año 1990</span>
+      <span class="text-warm-orange-500 font-semibold text-sm">🔥 En tu mesa desde el año 1990</span>
     </div>
 
     {{-- Main Heading --}}
@@ -37,8 +37,8 @@
       class="text-lg sm:text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto mb-8 animate-fade-in font-light"
       style="animation-delay: 0.6s;"
     >
-      Auténtica comida rápida tradicional colombiana.
-      <span class="block mt-2 text-warm-orange-400">Hecha con corazón, servida con orgullo.</span>
+      Los mejores combos de comida colombiana.
+      <span class="block mt-2 text-warm-orange-400">Simplemente deliciosos, siempre frescos.</span>
     </p>
 
     {{-- CTA Buttons --}}
@@ -48,13 +48,13 @@
     >
       {{-- Primary CTA --}}
       <a 
-        href="https://wa.me/573001234567?text=Hola%20Bocaditos%20Criollos%2C%20me%20gustaría%20hacer%20un%20pedido"
+        href="{{ whatsapp_url('Hola%20Bocaditos%20Criollos%2C%20quiero%20pedir%20un%20combo') }}"
         target="_blank"
         rel="noopener noreferrer"
         class="btn btn-primary lg:px-8 lg:py-4 lg:text-lg group"
       >
         <span class="flex items-center gap-2">
-          <span>📱 Ordenar por WhatsApp</span>
+          <span>📱 Pide tu combo a Domicilio</span>
           <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
           </svg>
@@ -64,9 +64,9 @@
       {{-- Secondary CTA --}}
       <button 
         class="btn btn-outline"
-        @click="smoothScroll('productos')"
+        @click="smoothScroll('combos')"
       >
-        Explorar Menú
+        Ver Combos
       </button>
     </div>
 

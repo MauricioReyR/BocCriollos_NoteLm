@@ -28,7 +28,7 @@
       </div>
       
       <p class="text-lg md:text-xl text-gray-400 leading-relaxed max-w-2xl mx-auto">
-        Lee las historias de nuestros clientes satisfechos que disfrutan nuestros productos todos los días
+        Descubre lo que dicen nuestros clientes sobre sus combos favoritos. Cada pack está pensado para compartir momentos deliciosos.
       </p>
     </div>
 
@@ -130,8 +130,8 @@
         {{-- Form --}}
         <div x-show="!submitted" class="card-premium">
           <div class="text-center mb-8">
-            <h3 class="text-xl font-display font-bold text-cream mb-2">Comparte tu experiencia</h3>
-            <p class="text-sm text-gray-400">¿Cómo fue tu experiencia en Bocaditos Criollos?</p>
+            <h3 class="text-xl font-display font-bold text-cream mb-2">Comparte tu experiencia con nuestros combos</h3>
+            <p class="text-sm text-gray-400">¿Qué combo pediste? Cuéntanos cómo te fue.</p>
           </div>
 
           <div class="space-y-6">
@@ -208,7 +208,7 @@
               <textarea 
                 id="testimonial-text"
                 x-model="form.text" 
-                placeholder="Cuéntanos qué te pareció la comida, el servicio, la atención..."
+                placeholder="Cuéntanos qué combo pediste, qué te pareció, si lo recomiendas..."
                 class="w-full min-h-[120px] resize-y"
                 :class="{ 'ring-2 ring-red-500/50 border-red-500/50': errors.text }"
                 maxlength="1000"
@@ -270,7 +270,7 @@
     {{-- CTA Section --}}
     <div class="mt-16 text-center" data-scroll-reveal="bottom" data-delay="300">
       <p class="text-gray-400 mb-6 text-lg">
-        ¿Quieres probar Bocaditos Criollos?
+        ¿Listo para probar nuestros combos?
       </p>
       
       <a 

@@ -53,10 +53,9 @@
       <div>
         <h4 class="font-display font-bold text-cream mb-4">Menú</h4>
         <ul class="space-y-3">
-          <li><a href="#productos" class="text-sm text-gray-400 hover:text-warm-orange-400 transition-colors">Productos</a></li>
-          <li><a href="#categorias" class="text-sm text-gray-400 hover:text-warm-orange-400 transition-colors">Categorías</a></li>
+          <li><a href="#combos" class="text-sm text-gray-400 hover:text-warm-orange-400 transition-colors">Combos</a></li>
           <li><a href="#testimonios" class="text-sm text-gray-400 hover:text-warm-orange-400 transition-colors">Testimonios</a></li>
-          <li><a href="#" class="text-sm text-gray-400 hover:text-warm-orange-400 transition-colors">Promociones</a></li>
+          <li><a href="{{ config('store.whatsapp_url') }}" target="_blank" rel="noopener noreferrer" class="text-sm text-gray-400 hover:text-warm-orange-400 transition-colors">Pedir por WhatsApp</a></li>
         </ul>
       </div>
 
