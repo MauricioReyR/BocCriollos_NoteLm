@@ -37,8 +37,8 @@
       class="text-lg sm:text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto mb-8 animate-fade-in font-light"
       style="animation-delay: 0.6s;"
     >
-      Los mejores combos de comida colombiana.
-      <span class="block mt-2 text-warm-orange-400">Simplemente deliciosos, siempre frescos.</span>
+      Comida Colombiana hecha con Amor.
+      <span class="block mt-2 text-warm-orange-400">Siempre deliciosos, siempre frescos.</span>
     </p>
 
     {{-- CTA Buttons --}}
