@@ -23,6 +23,7 @@ class HomeController extends Controller
 
         $combosTradicional = $combos->where('size', 'tradicional');
         $combosBocado = $combos->where('size', 'bocado');
+        $combosAdiciones = $combos->where('size', 'adiciones');
         $combosSinSize = $combos->whereNull('size');
 
         return view('pages.home', compact(
@@ -30,6 +31,7 @@ class HomeController extends Controller
             'combos',
             'combosTradicional',
             'combosBocado',
+            'combosAdiciones',
             'combosSinSize',
             'testimonials'
         ));

@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class ComboFactory extends Factory
 {
-    private static array $sizes = ['tradicional', 'bocado'];
+    private static array $sizes = ['tradicional', 'bocado', 'adiciones'];
 
     public function definition(): array
     {

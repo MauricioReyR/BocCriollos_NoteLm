@@ -140,6 +140,33 @@
       </div>
     @endif
 
+    {{-- Adiciones --}}
+    @if(($combosAdiciones ?? collect())->isNotEmpty())
+      <div class="mb-14" data-scroll-reveal="bottom" data-delay="350">
+        <div class="flex items-center gap-3 mb-8">
+          <span class="text-2xl">🥤</span>
+          <h3 class="text-2xl sm:text-3xl font-display font-bold text-cream">
+            Adiciones
+          </h3>
+          <span class="flex-1 h-px bg-gradient-to-r from-warm-orange-500/30 to-transparent"></span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          @foreach($combosAdiciones as $combo)
+            <x-combo-card
+              :featured="false"
+              data-scroll-reveal="bottom"
+              data-delay="{{ $loop->index * 150 }}"
+              name="{{ $combo->name }}"
+              description="{{ $combo->description }}"
+              price="{{ $combo->price }}"
+              imageUrl="{{ $combo->image_url }}"
+              size="{{ $combo->size }}"
+            />
+          @endforeach
+        </div>
+      </div>
+    @endif
+
     {{-- Empty State --}}
     @if(($combos ?? collect())->isEmpty())
       <div class="py-16 text-center" data-scroll-reveal="bottom" data-delay="0">

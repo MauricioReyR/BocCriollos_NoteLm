@@ -60,14 +60,6 @@
           </svg>
         </span>
       </a>
-
-      {{-- Secondary CTA --}}
-      <button 
-        class="btn btn-outline"
-        @click="smoothScroll('combos')"
-      >
-        Ver Combos
-      </button>
     </div>
 
     {{-- Trust Indicators --}}
@@ -80,7 +72,7 @@
         <span>Entrega Rápida</span>
       </div>
       <div class="flex items-center gap-2">
-        <span class="text-2xl">🌮</span>
+        <span class="text-2xl">🥟</span>
         <span>Recetas Auténticas</span>
       </div>
       <div class="flex items-center gap-2">

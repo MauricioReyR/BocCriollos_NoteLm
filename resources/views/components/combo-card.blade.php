@@ -36,6 +36,11 @@
             <span>🌮</span>
             <span>Bocado</span>
           </span>
+        @elseif($size === 'adiciones')
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-elegant-black/80 backdrop-blur-md border border-green-500/60 text-green-400 text-xs font-bold shadow-lg">
+            <span>🥤</span>
+            <span>Adición</span>
+          </span>
         @endif
       </div>
 
