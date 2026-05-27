@@ -19,7 +19,7 @@ class HomeController extends Controller
             ->where('is_featured', false)
             ->get();
 
-        $testimonials = Testimonial::approved()->sorted()->get();
+        $testimonials = Testimonial::approved()->sorted()->take(9)->get();
 
         $combosTradicional = $combos->where('size', 'tradicional');
         $combosBocado = $combos->where('size', 'bocado');

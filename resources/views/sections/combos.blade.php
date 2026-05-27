@@ -91,7 +91,7 @@
     @if(($combosBocado ?? collect())->isNotEmpty())
       <div class="mb-14" data-scroll-reveal="bottom" data-delay="200">
         <div class="flex items-center gap-3 mb-8">
-          <span class="text-2xl">🌮</span>
+          <span class="text-2xl">🥟</span>
           <h3 class="text-2xl sm:text-3xl font-display font-bold text-cream">
             Bocados
           </h3>

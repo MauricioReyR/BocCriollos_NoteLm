@@ -33,7 +33,7 @@
           </span>
         @elseif($size === 'bocado')
           <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-elegant-black/80 backdrop-blur-md border border-soft-gold/60 text-soft-gold text-xs font-bold shadow-lg">
-            <span>🌮</span>
+            <span>🥟</span>
             <span>Bocado</span>
           </span>
         @elseif($size === 'adiciones')
@@ -54,10 +54,18 @@
         />
         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
       @else
-        {{-- Gradient Background with icon overflow --}}
+        @php
+          $placeholderEmoji = match($size) {
+            'tradicional' => '🥟',
+            'bocado'      => '🌮',
+            'adiciones'   => '🥤',
+            default       => '🍽️',
+          };
+        @endphp
+        {{-- Gradient Background with category emoji --}}
         <div class="absolute inset-0 bg-gradient-to-br from-warm-orange-500/20 to-burnt-red-500/20"></div>
         <div class="absolute inset-0 flex items-center justify-center">
-          <span class="text-7xl md:text-8xl opacity-30 select-none">🎁</span>
+          <span class="text-7xl md:text-8xl opacity-30 select-none">{{ $placeholderEmoji }}</span>
         </div>
       @endif
 
