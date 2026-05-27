@@ -25,9 +25,11 @@ return [
     'latitude' => 4.6917865806312635,
     'longitude' => -74.10957991132996,
 
-    // Google Maps
+    // Google Maps (enlace externo para navegación)
     'google_maps_url' => 'https://maps.google.com/?q=4.6917865806312635,-74.10957991132996',
-    'google_maps_embed' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d0!2d-74.10957991132996!3d4.6917865806312635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwNDEnMzAuNCJOIDc0wrAwNiczNC41Ilc!5e0!3m2!1ses!2sco!4v1',
+
+    // OpenStreetMap Embed (gratuito, sin API key)
+    'osm_embed_url' => 'https://www.openstreetmap.org/export/embed.html?bbox=-74.11258%2C4.68879%2C-74.10658%2C4.69479&layer=mapnik&marker=4.69179%2C-74.10958',
 
     // WhatsApp
     'phone' => '3138513658',

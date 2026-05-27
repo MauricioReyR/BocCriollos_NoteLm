@@ -78,4 +78,20 @@ class HomeControllerTest extends TestCase
 
         $response->assertViewHas('testimonials');
     }
+
+    public function test_home_page_has_combos_adiciones(): void
+    {
+        $combo = Combo::factory()->create([
+            'is_active' => true,
+            'is_featured' => false,
+            'size' => 'adiciones',
+        ]);
+
+        $response = $this->get('/');
+
+        $response->assertViewHas('combosAdiciones');
+
+        $combosAdiciones = $response->viewData('combosAdiciones');
+        $this->assertTrue($combosAdiciones->contains($combo));
+    }
 }

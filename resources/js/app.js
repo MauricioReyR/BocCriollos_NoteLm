@@ -254,7 +254,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   function updateActiveNavLink() {
     try {
-      const sections = ['hero', 'combos', 'productos', 'categorias', 'testimonios', 'cta-whatsapp'];
+      const sections = ['hero', 'combos', 'testimonios', 'cta-whatsapp'];
       const scrollPosition = window.scrollY + 150;
       
       sections.forEach(sectionId => {

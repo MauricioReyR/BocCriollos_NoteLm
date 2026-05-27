@@ -127,10 +127,19 @@
                 </div>
                 <p class="quote">{{ $testimonial->text }}</p>
 
+                @php
+                    $approvalToken = hash_hmac('sha256', (string) $testimonial->id, config('app.key'));
+                    $approvalUrl = route('testimonios.aprobar', ['testimonial' => $testimonial->id, 'token' => $approvalToken]);
+                @endphp
+
                 <div style="text-align: center;">
-                    <a href="{{ url('/admin/testimonials/' . $testimonial->id . '/edit') }}" class="btn">
-                        🔍 Revisar y Aprobar
+                    <a href="{{ $approvalUrl }}" class="btn" style="display: inline-block; background: #16a34a; color: #ffffff; text-decoration: none; padding: 12px 28px; border-radius: 8px; font-weight: 600; font-size: 15px;">
+                        ✅ Aprobar Testimonio
                     </a>
+                    <p style="margin-top: 12px; font-size: 13px; color: #9ca3af;">
+                        Haz clic para aprobar este testimonio y que se publique en el sitio web.
+                        Este enlace es seguro y de un solo uso.
+                    </p>
                 </div>
             </div>
 

@@ -55,4 +55,24 @@ class TestimonialController extends Controller
             'testimonial' => $testimonial,
         ], 201);
     }
+
+    public function approve(Testimonial $testimonial, string $token)
+    {
+        // Verificar token HMAC (seguro, sin necesidad de login)
+        $expected = hash_hmac('sha256', (string) $testimonial->id, config('app.key'));
+
+        if (!hash_equals($expected, $token)) {
+            abort(404, 'Enlace inválido o expirado.');
+        }
+
+        if ($testimonial->is_approved) {
+            return redirect('/#testimonios')
+                ->with('info', 'Este testimonio ya estaba aprobado.');
+        }
+
+        $testimonial->update(['is_approved' => true]);
+
+        return redirect('/#testimonios')
+            ->with('success', '✅ Testimonio aprobado correctamente. ¡Gracias!');
+    }
 }

@@ -8,3 +8,6 @@ Route::get('/', [HomeController::class, 'index']);
 
 Route::post('/testimonios', [TestimonialController::class, 'store'])->middleware('throttle:3,1');
 
+Route::get('/testimonios/aprobar/{testimonial}/{token}', [TestimonialController::class, 'approve'])
+    ->name('testimonios.aprobar');
+

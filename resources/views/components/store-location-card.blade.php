@@ -4,7 +4,7 @@
   'phone' => config('store.phone'),
   'whatsappUrl' => config('store.whatsapp_full_url'),
   'mapsUrl' => config('store.google_maps_url'),
-  'embedUrl' => config('store.google_maps_embed'),
+  'embedUrl' => config('store.osm_embed_url'),
   'hoursWeekdays' => config('store.hours.weekdays'),
   'hoursWeekends' => config('store.hours.weekends'),
 ])
@@ -160,20 +160,62 @@
         </div>
 
         {{-- Map Section --}}
-        <div class="mt-6 pt-6 border-t border-white/10">
+        <div
+          class="mt-6 pt-6 border-t border-white/10"
+          x-data="{ mapLoaded: false, mapError: false }"
+          x-init="
+            const iframe = $el.querySelector('iframe');
+            if (!iframe) return;
+
+            const fallbackTimeout = setTimeout(() => {
+              if (!mapLoaded) {
+                mapError = true;
+                console.warn('[OSM Map] No se pudo cargar el mapa de OpenStreetMap. Posible bloqueo de red o restricción del navegador.');
+              }
+            }, 15000);
+
+            iframe.addEventListener('load', () => {
+              mapLoaded = true;
+              mapError = false;
+              clearTimeout(fallbackTimeout);
+            });
+          "
+        >
           <div class="flex items-center gap-2 mb-3">
             <svg class="w-4 h-4 text-warm-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
             </svg>
-            <span class="text-xs text-gray-500 uppercase tracking-wider font-medium">Mapa</span>
+            <span class="text-xs text-gray-500 uppercase tracking-wider font-medium">Mapa — OpenStreetMap</span>
           </div>
+
           <div class="relative rounded-xl overflow-hidden group/map">
+            {{-- Fallback overlay (shown on load error) --}}
+            <div
+              x-show="mapError"
+              x-cloak
+              x-transition:enter="transition ease-out duration-300"
+              x-transition:enter-start="opacity-0"
+              x-transition:enter-end="opacity-100"
+              class="absolute inset-0 z-10 flex flex-col items-center justify-center bg-elegant-black/90 backdrop-blur-sm rounded-xl"
+            >
+              <span class="text-4xl mb-3">🌍</span>
+              <p class="text-sm text-gray-400 text-center px-6 mb-2">No se pudo cargar el mapa</p>
+              <a
+                href="{{ $mapsUrl }}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-xs text-warm-orange-400 hover:text-warm-orange-300 transition-colors"
+              >
+                Abrir en Google Maps ↗
+              </a>
+            </div>
+
             {{-- Map iframe --}}
             <iframe
               src="{{ $embedUrl }}"
               width="100%"
               height="280"
-              style="border:0; filter: grayscale(0.25) invert(0.88) hue-rotate(180deg);"
+              style="border:0; filter: grayscale(0.3) invert(0.82);"
               allowfullscreen=""
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
@@ -183,6 +225,7 @@
             {{-- Overlay gradient on hover --}}
             <div class="absolute inset-0 rounded-xl ring-1 ring-white/10 group-hover/map:ring-warm-orange-500/30 transition-all duration-500 pointer-events-none"></div>
           </div>
+
           <p class="text-[11px] text-gray-500 text-center mt-2">
             <a href="{{ $mapsUrl }}" target="_blank" rel="noopener noreferrer" class="no-underline hover:text-warm-orange-400 transition-colors">
               Abrir en Google Maps ↗
