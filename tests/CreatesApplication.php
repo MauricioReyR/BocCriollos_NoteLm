@@ -16,6 +16,10 @@ trait CreatesApplication
 
         $app->make(Kernel::class)->bootstrap();
 
+        // Force SQLite in-memory for all tests to prevent data loss in MySQL
+        $app->config->set('database.default', 'sqlite');
+        $app->config->set('database.connections.sqlite.database', ':memory:');
+
         return $app;
     }
 }

@@ -69,10 +69,16 @@ class AdminComboController extends Controller
             $combo->image = null;
         }
 
-        $combo->update($validated + [
-            'image_url' => $combo->image_url,
-            'image'     => $combo->image,
-        ]);
+        // Activar modo admin para permitir la asignación de campos protegidos
+        Combo::$adminOverride = true;
+        try {
+            $combo->update($validated + [
+                'image_url' => $combo->image_url,
+                'image'     => $combo->image,
+            ]);
+        } finally {
+            Combo::$adminOverride = false;
+        }
 
         return redirect()->route('admin.combos')
             ->with('success', '✅ Combo actualizado correctamente.');
@@ -99,7 +105,12 @@ class AdminComboController extends Controller
      */
     public function toggleActive(Combo $combo)
     {
-        $combo->update(['is_active' => !$combo->is_active]);
+        Combo::$adminOverride = true;
+        try {
+            $combo->update(['is_active' => !$combo->is_active]);
+        } finally {
+            Combo::$adminOverride = false;
+        }
 
         $status = $combo->is_active ? 'activado' : 'desactivado';
         return redirect()->route('admin.combos')
