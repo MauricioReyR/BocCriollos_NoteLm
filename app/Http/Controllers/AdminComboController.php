@@ -69,7 +69,10 @@ class AdminComboController extends Controller
             $combo->image = null;
         }
 
-        // Activar modo admin para permitir la asignación de campos protegidos
+        // Remove image from validated so it doesn't overwrite $combo->image
+        // with the UploadedFile object (the + operator gives left side priority).
+        unset($validated['image']);
+
         Combo::$adminOverride = true;
         try {
             $combo->update($validated + [
