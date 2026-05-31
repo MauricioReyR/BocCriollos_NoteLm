@@ -16,7 +16,6 @@ class HomeController extends Controller
 
         $combos = Combo::active()
             ->sorted()
-            ->where('is_featured', false)
             ->get();
 
         $testimonials = Testimonial::approved()->sorted()->take(9)->get();

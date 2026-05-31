@@ -27,6 +27,7 @@ class RestoreImagesCommand extends Command
         'Combo Marranitas'            => 'combos/placeholder_combo_marranitas.jpg',
         'Avena Caleña'                => 'combos/47H0XOI7VIeBb6IIwjcPzfVhZ1GAYW2PosWBVJz2.jpg',
         'Masato de Arroz frio'        => 'combos/j4WAVQKWihDpNs03b7DFsouDxmlztQj4O9qYgA1o.jpg',
+        'Combo Tolimense'             => 'combos/placeholder_combo_tolimense.jpg',
     ];
 
     public function handle(): int

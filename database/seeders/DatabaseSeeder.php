@@ -58,7 +58,7 @@ class DatabaseSeeder extends Seeder
                 'price'        => 30000,
                 'is_active'    => true,
                 'is_featured'  => false,
-                'sort_order'   => 6,
+                'sort_order'   => 5,
                 'size'         => 'tradicional',
             ],
             [
@@ -67,7 +67,7 @@ class DatabaseSeeder extends Seeder
                 'price'        => 35000,
                 'is_active'    => true,
                 'is_featured'  => false,
-                'sort_order'   => 10,
+                'sort_order'   => 6,
                 'size'         => 'tradicional',
             ],
             
@@ -77,7 +77,7 @@ class DatabaseSeeder extends Seeder
                 'price'        => 35000,
                 'is_active'    => true,
                 'is_featured'  => false,
-                'sort_order'   => 5,
+                'sort_order'   => 7,
                 'size'         => 'tradicional',
             ],
             
@@ -87,7 +87,7 @@ class DatabaseSeeder extends Seeder
                 'price'        => 20000,
                 'is_active'    => true,
                 'is_featured'  => false,
-                'sort_order'   => 7,
+                'sort_order'   => 8,
                 'size'         => 'bocado',
             ],            
             [
@@ -96,7 +96,7 @@ class DatabaseSeeder extends Seeder
                 'price'        => 35000,
                 'is_active'    => true,
                 'is_featured'  => false,
-                'sort_order'   => 8,
+                'sort_order'   => 9,
                 'size'         => 'tradicional',
             ],
             [
@@ -106,7 +106,7 @@ class DatabaseSeeder extends Seeder
                 'is_active'    => true,
 
                 'is_featured'  => false,
-                'sort_order'   => 9,
+                'sort_order'   => 10,
                 'size'         => 'tradicional',
             ],
             [
@@ -134,7 +134,7 @@ class DatabaseSeeder extends Seeder
                 'price'        => 5500,
                 'is_active'    => true,
                 'is_featured'  => false,
-                'sort_order'   => 12,
+                'sort_order'   => 13,
                 'size'         => 'adiciones',
             ],
             [
@@ -143,8 +143,17 @@ class DatabaseSeeder extends Seeder
                 'price'        => 5500,
                 'is_active'    => true,
                 'is_featured'  => false,
-                'sort_order'   => 13,
+                'sort_order'   => 14,
                 'size'         => 'adiciones',
+            ],
+            [
+                'name'         => 'Combo Tolimense',
+                'description'  => '12 Crujientes empanadas de maíz, rellenas de puré de papa con riogo y trozos de pollo desmechado, acompañadas de aji criollo y salsa casera tipo chimichurri. Pide tu domicilio ahora y disfruta de esta delicia en casa! 🏡🛵😎',
+                'price'        => 35000,
+                'is_active'    => true,
+                'is_featured'  => false,
+                'sort_order'   => 14,
+                'size'         => 'tradicional',
             ],
             
         ];

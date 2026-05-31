@@ -18,7 +18,7 @@
       
       <div class="relative mb-6">
         <h2 class="text-5xl sm:text-6xl md:text-7xl font-display font-black text-cream leading-tight">
-          Elegí tu <span class="gradient-text">Combo</span>
+          Elige tu <span class="gradient-text">Combo</span>
         </h2>
         <div class="mt-4 flex items-center justify-center gap-3">
           <span class="block w-12 h-0.5 bg-gradient-to-r from-transparent to-warm-orange-500/60"></span>
@@ -28,8 +28,7 @@
       </div>
       
       <p class="text-lg md:text-xl text-gray-400 leading-relaxed max-w-2xl mx-auto">
-        Combos pensados para cada ocasión. La mejor relación calidad-precio, 
-        <span class="text-warm-orange-400 font-semibold">directo a tu puerta</span>.
+        Cada bocado preparado con amor y servido con orgullo
       </p>
     </div>
 
@@ -73,7 +72,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           @foreach($combosTradicional as $combo)
             <x-combo-card
-              :featured="false"
+              :featured="$combo->is_featured"
               data-scroll-reveal="bottom"
               data-delay="{{ $loop->index * 150 }}"
               name="{{ $combo->name }}"
@@ -100,7 +99,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           @foreach($combosBocado as $combo)
             <x-combo-card
-              :featured="false"
+              :featured="$combo->is_featured"
               data-scroll-reveal="bottom"
               data-delay="{{ $loop->index * 150 }}"
               name="{{ $combo->name }}"
@@ -127,7 +126,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           @foreach($combosSinSize as $combo)
             <x-combo-card
-              :featured="false"
+              :featured="$combo->is_featured"
               data-scroll-reveal="bottom"
               data-delay="{{ $loop->index * 150 }}"
               name="{{ $combo->name }}"
@@ -153,7 +152,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           @foreach($combosAdiciones as $combo)
             <x-combo-card
-              :featured="false"
+              :featured="$combo->is_featured"
               data-scroll-reveal="bottom"
               data-delay="{{ $loop->index * 150 }}"
               name="{{ $combo->name }}"

@@ -140,8 +140,7 @@ class CombosSyncCommand extends Command
                 'is_featured'  => false,
                 'sort_order'   => 12,
                 'size'         => 'adiciones',
-            ],
-            [
+            ],            [
                 'name'         => 'Masato de Arroz frio',
                 'description'  => 'Deliciosa receta de masato de arroz tradicional Bien frio',
                 'price'        => 5500,
@@ -149,7 +148,16 @@ class CombosSyncCommand extends Command
                 'sort_order'   => 13,
                 'size'         => 'adiciones',
             ],
+            [
+                'name'         => 'Combo Tolimense',
+                'description'  => '12 Crujientes empanadas de maíz, rellenas de puré de papa con riogo y trozos de pollo desmechado, acompañadas de aji criollo y salsa casera tipo chimichurri. Pide tu domicilio ahora y disfruta de esta delicia en casa! 🏡🛵😎',
+                'price'        => 35000,
+                'is_featured'  => false,
+                'sort_order'   => 14,
+                'size'         => 'tradicional',
+            ],
         ];
+
     }
 
     /**
