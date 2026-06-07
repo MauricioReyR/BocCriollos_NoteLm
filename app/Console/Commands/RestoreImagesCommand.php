@@ -20,14 +20,14 @@ class RestoreImagesCommand extends Command
         'Combo Vegetarianas'          => 'combos/h26FiVclEFZraJhqVbVgGp1rXT5mXYTDcDPANQfJ.jpg',
         'Combo Arepa Trífasica'       => 'combos/CEScFjP4qWq3MLtHGLfpXNTqkSp7cz8tddu0CY14.jpg',
         'Megacombo'                   => 'combos/LWfwLYPtnnbnD7G9fPqJQYhiGFVcazD355fUclKM.jpg',
-        'Combo Pipian'                => 'combos/placeholder_combo_pipian.jpg',
+        'Combo Pipian'                => 'combos/Pipian.jpeg',
         'Combo Cerpincho'             => 'combos/DvSCd34b6vCErydO1cLvMRmGsVdRedR5dDncfwgd.jpg',
         'MegaBocado'                  => 'combos/cIgCuUcMLezUvOijt2JGXbjSexufJ67c1HqJCTcJ.jpg',
         'Combo Valluno'               => 'combos/dOjGC9d5VVhrq7vrLNHn70e9FQcgFcRoImn4gXHl.jpg',
-        'Combo Marranitas'            => 'combos/placeholder_combo_marranitas.jpg',
+        'Combo Marranitas'            => 'combos/Marranitas.jpeg',
         'Avena Caleña'                => 'combos/47H0XOI7VIeBb6IIwjcPzfVhZ1GAYW2PosWBVJz2.jpg',
         'Masato de Arroz frio'        => 'combos/j4WAVQKWihDpNs03b7DFsouDxmlztQj4O9qYgA1o.jpg',
-        'Combo Tolimense'             => 'combos/placeholder_combo_tolimense.jpg',
+        'Combo Tolimense'             => 'combos/Tolimenses.jpeg',
     ];
 
     public function handle(): int

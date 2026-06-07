@@ -24,6 +24,8 @@ class DatabaseSeeder extends Seeder
                 'is_featured'  => true,
                 'sort_order'   => 1,
                 'size'         => 'bocado',
+                'image'        => 'combos/YDMToOlZdLpgLkB2P2AEdF1euj5JDtJcXHvY3eCb.jpg',
+                'image_url'    => '/storage/combos/YDMToOlZdLpgLkB2P2AEdF1euj5JDtJcXHvY3eCb.jpg',
             ],           
             [
                 'name'         => 'Combo Mini Pastelitos de Yuca',
@@ -33,6 +35,8 @@ class DatabaseSeeder extends Seeder
                 'is_featured'  => true,
                 'sort_order'   => 2,
                 'size'         => 'bocado',
+                'image'        => 'combos/PG2QKLApSXzfx5r2ImFRvgI7RTRL73eRh7fXtd4I.jpg',
+                'image_url'    => '/storage/combos/PG2QKLApSXzfx5r2ImFRvgI7RTRL73eRh7fXtd4I.jpg',
             ],
             [
                 'name'         => 'Combo Baby Arepitas',
@@ -42,6 +46,8 @@ class DatabaseSeeder extends Seeder
                 'is_featured'  => true,
                 'sort_order'   => 3,
                 'size'         => 'bocado',
+                'image'        => 'combos/7JGNwF87V1jhYA6BnXM5L5cXLuimAaQ0pyhunyQV.jpg',
+                'image_url'    => '/storage/combos/7JGNwF87V1jhYA6BnXM5L5cXLuimAaQ0pyhunyQV.jpg',
             ],
              [
                 'name'         => 'Combo Tradicional',
@@ -51,6 +57,8 @@ class DatabaseSeeder extends Seeder
                 'is_featured'  => false,
                 'sort_order'   => 4,
                 'size'         => 'tradicional',
+                'image'        => 'combos/DRnuSAoezjBIncugnjidXpgELYrsRJjq1q0mXOu0.jpg',
+                'image_url'    => '/storage/combos/DRnuSAoezjBIncugnjidXpgELYrsRJjq1q0mXOu0.jpg',
             ],
             [
                 'name'         => 'Combo Vegetarianas',
@@ -60,6 +68,8 @@ class DatabaseSeeder extends Seeder
                 'is_featured'  => false,
                 'sort_order'   => 5,
                 'size'         => 'tradicional',
+                'image'        => 'combos/h26FiVclEFZraJhqVbVgGp1rXT5mXYTDcDPANQfJ.jpg',
+                'image_url'    => '/storage/combos/h26FiVclEFZraJhqVbVgGp1rXT5mXYTDcDPANQfJ.jpg',
             ],
             [
                 'name'         => 'Combo Arepa Trífasica',
@@ -69,6 +79,8 @@ class DatabaseSeeder extends Seeder
                 'is_featured'  => false,
                 'sort_order'   => 6,
                 'size'         => 'tradicional',
+                'image'        => 'combos/CEScFjP4qWq3MLtHGLfpXNTqkSp7cz8tddu0CY14.jpg',
+                'image_url'    => '/storage/combos/CEScFjP4qWq3MLtHGLfpXNTqkSp7cz8tddu0CY14.jpg',
             ],
             
             [
@@ -79,6 +91,8 @@ class DatabaseSeeder extends Seeder
                 'is_featured'  => false,
                 'sort_order'   => 7,
                 'size'         => 'tradicional',
+                'image'        => 'combos/LWfwLYPtnnbnD7G9fPqJQYhiGFVcazD355fUclKM.jpg',
+                'image_url'    => '/storage/combos/LWfwLYPtnnbnD7G9fPqJQYhiGFVcazD355fUclKM.jpg',
             ],
             
             [
@@ -89,6 +103,8 @@ class DatabaseSeeder extends Seeder
                 'is_featured'  => false,
                 'sort_order'   => 8,
                 'size'         => 'bocado',
+                'image'        => 'combos/Pipian.jpeg',
+                'image_url'    => '/storage/combos/Pipian.jpeg',
             ],            
             [
                 'name'         => 'Combo Cerpincho',
@@ -98,6 +114,8 @@ class DatabaseSeeder extends Seeder
                 'is_featured'  => false,
                 'sort_order'   => 9,
                 'size'         => 'tradicional',
+                'image'        => 'combos/DvSCd34b6vCErydO1cLvMRmGsVdRedR5dDncfwgd.jpg',
+                'image_url'    => '/storage/combos/DvSCd34b6vCErydO1cLvMRmGsVdRedR5dDncfwgd.jpg',
             ],
             [
                 'name'         => 'MegaBocado',
@@ -108,6 +126,8 @@ class DatabaseSeeder extends Seeder
                 'is_featured'  => false,
                 'sort_order'   => 10,
                 'size'         => 'tradicional',
+                'image'        => 'combos/cIgCuUcMLezUvOijt2JGXbjSexufJ67c1HqJCTcJ.jpg',
+                'image_url'    => '/storage/combos/cIgCuUcMLezUvOijt2JGXbjSexufJ67c1HqJCTcJ.jpg',
             ],
             [
                 'name'         => 'Combo Valluno',
@@ -117,6 +137,8 @@ class DatabaseSeeder extends Seeder
                 'is_featured'  => false,
                 'sort_order'   => 11,
                 'size'         => 'tradicional',
+                'image'        => 'combos/dOjGC9d5VVhrq7vrLNHn70e9FQcgFcRoImn4gXHl.jpg',
+                'image_url'    => '/storage/combos/dOjGC9d5VVhrq7vrLNHn70e9FQcgFcRoImn4gXHl.jpg',
             ],
             [
                 'name'         => 'Combo Marranitas',
@@ -127,6 +149,8 @@ class DatabaseSeeder extends Seeder
                 'is_featured'  => false,
                 'sort_order'   => 12,
                 'size'         => 'tradicional',
+                'image'        => 'combos/Marranitas.jpeg',
+                'image_url'    => '/storage/combos/Marranitas.jpeg',
             ],
             [
                 'name'         => 'Avena Caleña',
@@ -136,6 +160,8 @@ class DatabaseSeeder extends Seeder
                 'is_featured'  => false,
                 'sort_order'   => 13,
                 'size'         => 'adiciones',
+                'image'        => 'combos/47H0XOI7VIeBb6IIwjcPzfVhZ1GAYW2PosWBVJz2.jpg',
+                'image_url'    => '/storage/combos/47H0XOI7VIeBb6IIwjcPzfVhZ1GAYW2PosWBVJz2.jpg',
             ],
             [
                 'name'         => 'Masato de Arroz frio',
@@ -145,6 +171,8 @@ class DatabaseSeeder extends Seeder
                 'is_featured'  => false,
                 'sort_order'   => 14,
                 'size'         => 'adiciones',
+                'image'        => 'combos/j4WAVQKWihDpNs03b7DFsouDxmlztQj4O9qYgA1o.jpg',
+                'image_url'    => '/storage/combos/j4WAVQKWihDpNs03b7DFsouDxmlztQj4O9qYgA1o.jpg',
             ],
             [
                 'name'         => 'Combo Tolimense',
@@ -152,8 +180,10 @@ class DatabaseSeeder extends Seeder
                 'price'        => 35000,
                 'is_active'    => true,
                 'is_featured'  => false,
-                'sort_order'   => 14,
+                'sort_order'   => 15,
                 'size'         => 'tradicional',
+                'image'        => 'combos/Tolimenses.jpeg',
+                'image_url'    => '/storage/combos/Tolimenses.jpeg',
             ],
             
         ];
@@ -162,13 +192,19 @@ class DatabaseSeeder extends Seeder
 
         Combo::whereNotIn('name', $approvedNames)->delete();
 
-        // Nota: image e image_url se omiten intencionalmente para
-        // no sobrescribir las imágenes subidas desde el admin.
-        foreach ($combos as $data) {
-            Combo::updateOrCreate(
-                ['name' => $data['name']],
-                $data
-            );
+        // Se activa adminOverride para poder asignar image e image_url
+        // que son campos protegidos del modelo. Así las imágenes sobreviven
+        // a un migrate:fresh --seed.
+        Combo::$adminOverride = true;
+        try {
+            foreach ($combos as $data) {
+                Combo::updateOrCreate(
+                    ['name' => $data['name']],
+                    $data
+                );
+            }
+        } finally {
+            Combo::$adminOverride = false;
         }
 
         // ==========================================

@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\Models\Combo;
+use App\Models\Testimonial;
+use App\Observers\ComboObserver;
+use App\Observers\TestimonialObserver;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -20,6 +24,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Combo::observe(ComboObserver::class);
+        Testimonial::observe(TestimonialObserver::class);
     }
 }

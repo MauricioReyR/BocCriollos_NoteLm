@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AdminTestimonialController extends Controller
 {
@@ -26,7 +27,7 @@ class AdminTestimonialController extends Controller
 
         $adminPassword = config('admin.password');
 
-        if (! $adminPassword || $request->password !== $adminPassword) {
+        if (! $adminPassword || ! Hash::check($request->password, $adminPassword)) {
             return back()->withErrors([
                 'password' => 'La contraseña ingresada es incorrecta.',
             ])->onlyInput('password');

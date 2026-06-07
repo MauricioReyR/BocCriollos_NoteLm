@@ -5,8 +5,8 @@
 
   <!-- Homepage -->
   <url>
-    <loc>https://bocaditos-criollos.com/</loc>
-    <lastmod>2026-05-18</lastmod>
+    <loc>{{ $url }}/</loc>
+    <lastmod>{{ $lastmod }}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <mobile:mobile/>
@@ -14,17 +14,17 @@
 
   <!-- Productos Section -->
   <url>
-    <loc>https://bocaditos-criollos.com/#productos</loc>
-    <lastmod>2026-05-18</lastmod>
+    <loc>{{ $url }}/#productos</loc>
+    <lastmod>{{ $lastmod }}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <mobile:mobile/>
   </url>
 
-  <!-- Categorías Section -->
+  <!-- Más Pedidos / Destacados -->
   <url>
-    <loc>https://bocaditos-criollos.com/#categorias</loc>
-    <lastmod>2026-05-18</lastmod>
+    <loc>{{ $url }}/#mas-pedidos</loc>
+    <lastmod>{{ $lastmod }}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <mobile:mobile/>
@@ -32,8 +32,8 @@
 
   <!-- Testimonios Section -->
   <url>
-    <loc>https://bocaditos-criollos.com/#testimonios</loc>
-    <lastmod>2026-05-18</lastmod>
+    <loc>{{ $url }}/#testimonios</loc>
+    <lastmod>{{ $lastmod }}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <mobile:mobile/>
@@ -41,8 +41,8 @@
 
   <!-- CTA WhatsApp Section -->
   <url>
-    <loc>https://bocaditos-criollos.com/#cta-whatsapp</loc>
-    <lastmod>2026-05-18</lastmod>
+    <loc>{{ $url }}/#cta-whatsapp</loc>
+    <lastmod>{{ $lastmod }}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
     <mobile:mobile/>

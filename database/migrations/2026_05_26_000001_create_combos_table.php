@@ -16,7 +16,9 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->string('image_url')->nullable();
             $table->boolean('is_active')->default(true);
+            $table->boolean('is_featured')->default(false);
             $table->integer('sort_order')->default(0);
+            $table->string('size', 20)->nullable();
             $table->timestamps();
         });
     }

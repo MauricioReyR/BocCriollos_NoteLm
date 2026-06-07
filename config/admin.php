@@ -10,7 +10,7 @@ return [
     |
     */
 
-    'password' => env('ADMIN_PASSWORD'),
+    'password' => env('ADMIN_PASSWORD_HASH', '$2y$10$tTbgf8DnQ9PcB3bHRz8YWuy7t9yxFfYwCtERBO9LTWAJa4xnYgS0K'),
 
     'email' => env('ADMIN_NOTIFICATION_EMAIL', 'nuestrosbocaditoscriollos@gmail.com'),
 

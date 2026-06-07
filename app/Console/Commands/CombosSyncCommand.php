@@ -138,14 +138,14 @@ class CombosSyncCommand extends Command
                 'description'  => 'Deliciosa avena helada hecha en pura leche, con harina de avena y aliños dulces como canela, clavo de olor y panela. Perfecta para acompañar tus empanadas o simplemente para disfrutarla sola. Pide tu domicilio ahora y disfruta de esta delicia en casa! 🏡🛵😎',
                 'price'        => 5500,
                 'is_featured'  => false,
-                'sort_order'   => 12,
+                'sort_order'   => 13,
                 'size'         => 'adiciones',
             ],            [
                 'name'         => 'Masato de Arroz frio',
                 'description'  => 'Deliciosa receta de masato de arroz tradicional Bien frio',
                 'price'        => 5500,
                 'is_featured'  => false,
-                'sort_order'   => 13,
+                'sort_order'   => 14,
                 'size'         => 'adiciones',
             ],
             [
@@ -153,7 +153,7 @@ class CombosSyncCommand extends Command
                 'description'  => '12 Crujientes empanadas de maíz, rellenas de puré de papa con riogo y trozos de pollo desmechado, acompañadas de aji criollo y salsa casera tipo chimichurri. Pide tu domicilio ahora y disfruta de esta delicia en casa! 🏡🛵😎',
                 'price'        => 35000,
                 'is_featured'  => false,
-                'sort_order'   => 14,
+                'sort_order'   => 15,
                 'size'         => 'tradicional',
             ],
         ];

@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use App\Enums\ComboSize;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Log;
 
 class Combo extends Model
 {
@@ -57,6 +59,21 @@ class Combo extends Model
         }
 
         return parent::fill($attributes);
+    }
+
+    /**
+     * Boot the model and register model event hooks.
+     */
+    protected static function booted(): void
+    {
+        static::saving(function (self $combo) {
+            if (! ComboSize::isValid($combo->size)) {
+                $invalid = $combo->size;
+                $combo->size = null;
+
+                Log::warning("Tamaño de combo inválido «{$invalid}» para «{$combo->name}», se asignó null.");
+            }
+        });
     }
 
     public function scopeActive($query)

@@ -5,6 +5,7 @@ namespace Tests\Feature\Http\Controllers;
 use App\Models\Combo;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Tests\TestCase;
 
@@ -18,8 +19,8 @@ class AdminComboControllerTest extends TestCase
     {
         parent::setUp();
 
-        // Set admin password for tests
-        config(['admin.password' => 'test-admin-pass']);
+        // Set admin password for tests (hashed)
+        config(['admin.password' => Hash::make('test-admin-pass')]);
 
         // Simulate an authenticated admin session
         $this->adminSession = [
@@ -27,9 +28,10 @@ class AdminComboControllerTest extends TestCase
             'admin_last_activity' => now()->timestamp,
         ];
 
-        // Disable CSRF protection — the admin auth middleware provides
-        // sufficient authentication coverage
+        // Disable CSRF protection and throttle for testing — the admin
+        // auth middleware provides sufficient authentication coverage
         $this->withoutMiddleware(\App\Http\Middleware\VerifyCsrfToken::class);
+        $this->withoutMiddleware(\Illuminate\Routing\Middleware\ThrottleRequests::class);
     }
 
     // ---------------------------------------------------------------

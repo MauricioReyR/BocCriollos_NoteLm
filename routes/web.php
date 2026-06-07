@@ -4,6 +4,9 @@ use App\Http\Controllers\AdminComboController;
 use App\Http\Controllers\AdminTestimonialController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TestimonialController;
+use App\Models\Combo;
+use App\Models\Testimonial;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index']);
@@ -20,7 +23,7 @@ Route::get('/testimonios/aprobar/{testimonial}/{token}', [TestimonialController:
 */
 Route::prefix('admin')->group(function () {
     Route::get('/', [AdminTestimonialController::class, 'showLoginForm'])->name('admin.login');
-    Route::post('/', [AdminTestimonialController::class, 'login']);
+    Route::post('/', [AdminTestimonialController::class, 'login'])->middleware('throttle:5,1');
     Route::post('/logout', [AdminTestimonialController::class, 'logout'])->name('admin.logout');
 
     Route::middleware('admin')->group(function () {
@@ -40,3 +43,23 @@ Route::prefix('admin')->group(function () {
     });
 });
 
+/*
+|--------------------------------------------------------------------------
+| Sitemap Dinámico
+|--------------------------------------------------------------------------
+*/
+Route::get('/sitemap.xml', function () {
+    $lastmod = Cache::remember('bocaditos.sitemap.lastmod', 3600, function () {
+        $latestCombo = Combo::query()->latest('updated_at')->value('updated_at');
+        $latestTestimonial = Testimonial::query()->latest('updated_at')->value('updated_at');
+
+        $dates = array_filter([$latestCombo, $latestTestimonial]);
+
+        return $dates ? max($dates)->format('Y-m-d') : now()->format('Y-m-d');
+    });
+
+    return response()->view('sitemap', [
+        'lastmod' => $lastmod,
+        'url' => url('/'),
+    ])->header('Content-Type', 'application/xml');
+});
